@@ -1,0 +1,8 @@
+# Corner Table — robots.txt
+# Allow all crawlers; point them at the sitemap.
+
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+Sitemap: https://cornertable.example/sitemap.xml

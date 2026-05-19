@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#B7472A" />
+
+  <title>Corner Table — Local Kitchen & Bar</title>
+  <meta name="description" content="Corner Table is a neighborhood restaurant serving seasonal, locally-sourced plates in a warm, unhurried setting. Reservations open daily." />
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="Corner Table — Local Kitchen & Bar" />
+  <meta property="og:description" content="Seasonal cooking, neighborhood hospitality. Book a table tonight." />
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Icons & manifest -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Speed up image CDN handshakes -->
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+
+  <!-- Fonts: Fraunces (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Preload the hero image so it paints fast -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Local business structured data — helps search engines understand the site -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Corner Table",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    "telephone": "+1-555-014-2030",
+    "email": "hello@cornertable.example",
+    "priceRange": "$$",
+    "servesCuisine": "Seasonal American",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "412 Linden Street",
+      "addressLocality": "Riverview",
+      "addressRegion": "OR",
+      "postalCode": "97214",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "17:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "17:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "21:00" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Accessibility: keyboard users can jump past the header -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- =========================================================
+       HEADER — sticky, blurs background on scroll
+       ========================================================= -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Corner Table, home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 2v9a2 2 0 0 0 2 2v9"/>
+            <path d="M11 2v6"/>
+            <path d="M5 2v6"/>
+            <path d="M17 2c-1.5 0-3 2-3 5.5S15.5 13 17 13v9"/>
+          </svg>
+        </span>
+        <span class="brand-name">Corner Table</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <button class="nav-close" aria-label="Close menu" type="button">&times;</button>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+15550142030" class="btn btn-call" aria-label="Call Corner Table at (555) 014-2030">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="btn-call-text">(555) 014-2030</span>
+        </a>
+        <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- =========================================================
+         HERO — full-bleed image, tagline, two CTAs
+         ========================================================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow eyebrow-light">Neighborhood kitchen &middot; est. 2019</p>
+        <h1 id="hero-title" class="hero-title">Seasonal plates,<br/>quiet conversations.</h1>
+        <p class="hero-sub">A small dining room on Linden Street where the bread is warm, the wine list is short, and dinner takes as long as it needs to.</p>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+          <a href="#contact" class="btn btn-ghost btn-ghost-light">Book a Table</a>
+        </div>
+      </div>
+      <a href="#about" class="hero-scroll" aria-label="Scroll to about section">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- =========================================================
+         ABOUT — short warm paragraph, asymmetric image
+         ========================================================= -->
+    <section id="about" class="section about reveal">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">Where neighbors become regulars.</h2>
+          <p>Corner Table opened as a small idea between three friends who wanted to cook the kind of food they'd actually want to eat after a long day &mdash; unfussy, generous, made with what's in season at the farmers' market down the road.</p>
+          <p>Seven years later we're still here, still cooking from a hand-written menu that changes when the produce does, and still pouring the same honest wines we started with.</p>
+          <a href="#menu" class="link-arrow">See what's on tonight &rarr;</a>
+        </div>
+        <figure class="about-figure">
+          <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=900&q=80"
+               alt="Warm dining room with pendant lights, dark wooden tables and a small bar."
+               loading="lazy" width="900" height="1100" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         MENU — 3 categories in a clean grid
+         ========================================================= -->
+    <section id="menu" class="section menu reveal">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Menu</p>
+          <h2 class="section-title">A short menu, made well.</h2>
+          <p class="section-lede">Updated weekly. Ask your server about tonight's specials and seasonal additions.</p>
+        </header>
+
+        <div class="menu-categories">
+
+          <article class="menu-category">
+            <h3 class="menu-category-title">Starters</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Heirloom Tomato &amp; Burrata</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">14</span>
+                </div>
+                <p class="menu-item-desc">Local tomatoes, creamy burrata, basil oil, finishing salt.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Charred Octopus</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">18</span>
+                </div>
+                <p class="menu-item-desc">Smoked paprika, preserved-lemon aioli, crispy capers.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Wild Mushroom Toast</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">13</span>
+                </div>
+                <p class="menu-item-desc">Sourdough, garlic confit, soft herbs, truffled pecorino.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Beet &amp; Whipped Goat Cheese</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">14</span>
+                </div>
+                <p class="menu-item-desc">Roasted beets, candied walnuts, frisée, sherry vinaigrette.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Soup of the Day</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">10</span>
+                </div>
+                <p class="menu-item-desc">Made each morning. Served with warm sourdough.</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="menu-category">
+            <h3 class="menu-category-title">Mains</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Braised Short Rib</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">32</span>
+                </div>
+                <p class="menu-item-desc">Slow-braised in red wine, creamy polenta, gremolata.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Pan-Seared Salmon</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">28</span>
+                </div>
+                <p class="menu-item-desc">Brown butter, asparagus, fingerling potatoes, lemon.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Wild Mushroom Risotto</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">24</span>
+                </div>
+                <p class="menu-item-desc">Arborio, foraged mushrooms, aged parmesan, thyme.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">The Corner Burger</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">19</span>
+                </div>
+                <p class="menu-item-desc">Grass-fed beef, aged cheddar, onion jam, brioche, fries.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Herb-Roasted Half Chicken</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">26</span>
+                </div>
+                <p class="menu-item-desc">Rosemary, lemon, roasted root vegetables, pan jus.</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="menu-category">
+            <h3 class="menu-category-title">Desserts</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Vanilla Bean Crème Brûlée</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">11</span>
+                </div>
+                <p class="menu-item-desc">Classic French custard, caramelized sugar shell.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Dark Chocolate Tart</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">12</span>
+                </div>
+                <p class="menu-item-desc">70% chocolate ganache, sea salt, fresh raspberries.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">Seasonal Fruit Crumble</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">10</span>
+                </div>
+                <p class="menu-item-desc">Whatever's ripe, oat-almond crumble, vanilla ice cream.</p>
+              </li>
+              <li class="menu-item">
+                <div class="menu-item-head">
+                  <span class="menu-item-name">House Tiramisu</span>
+                  <span class="menu-item-dots" aria-hidden="true"></span>
+                  <span class="menu-item-price">11</span>
+                </div>
+                <p class="menu-item-desc">Espresso-soaked savoiardi, mascarpone, dark cocoa.</p>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+
+        <p class="menu-foot">Prices in USD. Please tell us about allergies — we're happy to adapt most dishes.</p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         GALLERY — responsive 6-image grid
+         ========================================================= -->
+    <section id="gallery" class="section gallery reveal">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h2 class="section-title">A look inside.</h2>
+        </header>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+                 alt="Pasta dish dressed with fresh herbs."
+                 loading="lazy" width="800" height="1000" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80"
+                 alt="Restaurant interior at dusk."
+                 loading="lazy" width="800" height="1000" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80"
+                 alt="Plated dessert with fresh berries."
+                 loading="lazy" width="800" height="1000" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=800&q=80"
+                 alt="A cocktail being poured at the bar."
+                 loading="lazy" width="800" height="1000" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=800&q=80"
+                 alt="Fresh produce on a wooden counter."
+                 loading="lazy" width="800" height="1000" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=80"
+                 alt="A finished plate set down on a marble table."
+                 loading="lazy" width="800" height="1000" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         VISIT — hours table + address + map placeholder
+         ========================================================= -->
+    <section id="visit" class="section visit reveal">
+      <div class="container visit-grid">
+        <div class="visit-info">
+          <p class="eyebrow">Visit</p>
+          <h2 class="section-title">Hours &amp; Location</h2>
+
+          <div class="hours">
+            <h3 class="visit-subheading">Hours</h3>
+            <table class="hours-table" aria-label="Opening hours">
+              <tbody>
+                <tr><th scope="row">Monday</th><td class="muted">Closed</td></tr>
+                <tr><th scope="row">Tue – Thu</th><td>5:00 – 10:00 pm</td></tr>
+                <tr><th scope="row">Fri – Sat</th><td>5:00 – 11:00 pm</td></tr>
+                <tr><th scope="row">Sunday</th><td>Brunch 11:00&nbsp;am – 3:00&nbsp;pm<br/>Dinner 5:00 – 9:00&nbsp;pm</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="address-block">
+            <h3 class="visit-subheading">Find us</h3>
+            <address>
+              412 Linden Street<br/>
+              Riverview, OR 97214
+            </address>
+            <p><a href="tel:+15550142030">(555) 014-2030</a></p>
+            <a href="https://www.google.com/maps/search/?api=1&query=412+Linden+Street+Riverview+OR+97214"
+               target="_blank" rel="noopener" class="link-arrow">Get directions &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Replace with a real Google Maps iframe when ready. The visual
+             placeholder mirrors the brand and still communicates "map". -->
+        <div class="map-wrap" aria-label="Map of restaurant location">
+          <div class="map-placeholder">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <p><strong>412 Linden Street</strong><br/>Riverview, OR 97214</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=412+Linden+Street+Riverview+OR+97214"
+               target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTACT — info + front-end-only form
+         ========================================================= -->
+    <section id="contact" class="section contact reveal">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title">Drop us a line.</h2>
+          <p class="section-lede">Reservations, private events, or just saying hi — we read every message.</p>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+15550142030">(555) 014-2030</a>
+            </li>
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:hello@cornertable.example">hello@cornertable.example</a>
+            </li>
+            <li>
+              <span class="contact-label">Address</span>
+              <span>412 Linden Street<br/>Riverview, OR 97214</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="form-row-split">
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="form-row">
+              <label for="phone">Phone <span class="optional">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">Corner Table</span>
+        <p>Seasonal cooking, neighborhood hospitality.<br/>Riverview, Oregon.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-social" aria-label="Social links">
+        <a href="#" aria-label="Instagram" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="OpenTable" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14 14 0 0 0 0 20M12 2a14 14 0 0 1 0 20M2 12h20"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer-legal">&copy; <span id="year"></span> Corner Table. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back-to-top button — hidden until user scrolls past the hero -->
+  <button class="to-top" type="button" aria-label="Back to top" hidden>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
