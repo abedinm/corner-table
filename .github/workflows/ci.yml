@@ -1,0 +1,47 @@
+# Lightweight validation on every push / PR.
+# Uses Python (preinstalled on ubuntu-latest) — no npm install,
+# so the job runs in under 30s.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate static site
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: manifest.json is valid JSON
+        run: python -c "import json; json.load(open('manifest.json')); print('OK')"
+
+      - name: sitemap.xml is well-formed XML
+        run: python -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml'); print('OK')"
+
+      - name: JSON-LD structured data parses
+        # Extract the <script type="application/ld+json"> block from index.html
+        # and parse it. Catches typos / trailing-comma bugs in the schema.
+        run: |
+          python <<'PY'
+          import json, re, pathlib
+          html = pathlib.Path('index.html').read_text(encoding='utf-8')
+          m = re.search(
+              r'<script type="application/ld\+json">(.*?)</script>',
+              html, re.DOTALL
+          )
+          assert m, "No JSON-LD block found in index.html"
+          json.loads(m.group(1))
+          print("OK")
+          PY
+
+      - name: All shell files present
+        run: |
+          for f in index.html 404.html styles.css script.js sw.js favicon.svg manifest.json netlify.toml robots.txt sitemap.xml; do
+            test -f "$f" || { echo "MISSING: $f"; exit 1; }
+          done
+          echo "OK"

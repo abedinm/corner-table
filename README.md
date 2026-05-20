@@ -1,5 +1,9 @@
 # Corner Table — Restaurant Website
 
+[![CI](https://github.com/abedinm/corner-table/actions/workflows/ci.yml/badge.svg)](https://github.com/abedinm/corner-table/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/abedinm/corner-table)
+
 A complete, mobile-first single-page site for a local restaurant. No frameworks, no build step — open `index.html` in any modern browser and it works.
 
 ---
@@ -113,6 +117,6 @@ The form currently validates client-side and shows a fake success message. Three
 
 ## License
 
-The code in this folder is yours to use freely.
+Code released under the [MIT License](LICENSE) — use it however you want.
 
 The placeholder photos are from [Unsplash](https://unsplash.com) and free for commercial use under the [Unsplash License](https://unsplash.com/license). Replace them with your own photos before launch for best performance and a unique look.
