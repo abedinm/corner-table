@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/abedinm/corner-table)
 
+![Corner Table — desktop hero screenshot](docs/preview.png)
+
 A complete, mobile-first single-page site for a local restaurant. No frameworks, no build step — open `index.html` in any modern browser and it works.
 
 ---
